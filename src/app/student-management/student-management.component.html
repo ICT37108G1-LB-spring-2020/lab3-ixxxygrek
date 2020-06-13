@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="form-container card">
+          <form>
+            <h3>სუტენდის დამატება</h3>
+
+            <div class="form-group field">
+              <label for="name">სახელი</label>
+              <input type="test" name="name" id="name" class="form-control" #newName>
+            </div>
+
+            <div class="form-group field">
+              <label for="surname">გვარი</label>
+              <input type="text" name="surname" id="surname" class="form-control" #newSurname>
+            </div>
+
+            <div class="form-group field">
+                <label for="id">ID</label>
+                <input type="number" name="id" id="id" class="form-control" #newId>
+            </div>
+
+            <button type="button" class="btn btn-success" (click) ="addStudent(newName, newSurname, newId)">
+              შენახვა
+            </button>
+          </form>
+        </div>
+
+        <table class="students-list">
+          <tr>
+            <th>სახელი </th>
+            <th>გვარი</th>
+            <th>ID</th>
+          </tr>
+
+          <tr app-student-item *ngFor="let student of students" [student]="student"></tr>
+        </table>
+      </div>
+    </div>
+</div>
